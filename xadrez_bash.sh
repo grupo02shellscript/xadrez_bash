@@ -16,7 +16,7 @@ preto="44"
 cor=$branco
 
 FIM=""
-#### AS PEÇAS COM CARACTERES BONITINHOS#####
+#### AS PEÃ‡AS COM CARACTERES BONITINHOS#####
 
 negro["rei"]="?"
 negro["rainha"]="?"
@@ -41,7 +41,7 @@ do
 	done
 done
 
-###########inicializa peças na posição inicial###############
+###########inicializa peÃ§as na posiÃ§Ã£o inicial###############
 for i in 9 8 7 6 5 4 3 2 1 0;
 do      
         for j in "Z" "A" "B" "C" "D" "E" "F" "G" "H" "I";
@@ -126,7 +126,7 @@ width=$(($colunas - 30))
 height=$(($linhas - 20))
 
 
-############### o nome da função ja diz tudo né?########################################
+############### o nome da funÃ§Ã£o ja diz tudo nÃ©?########################################
 desenha_tabuleiro(){
 for i in 9 8 7 6 5 4 3 2 1 0;
 do
@@ -135,7 +135,7 @@ do
 	for j in "Z" "A" "B" "C" "D" "E" "F" "G" "H" "I";
 	do
 	 	peca=${ps["$j","$i"]}
-		###############teste para não pintar as bordas##########################
+		###############teste para nÃ£o pintar as bordas##########################
 		if [ $i == 0 ]
 		then
 			echo -n " "$peca
@@ -175,7 +175,7 @@ do
 done
 }
 
-################## duas funções que fazem backups da ultima jogada para poder retornar ################# 
+################## duas funÃ§Ãµes que fazem backups da ultima jogada para poder retornar ################# 
 faz_backup(){
 
 for i in 9 8 7 6 5 4 3 2 1 0;
@@ -220,7 +220,7 @@ testa_limites(){
 	fi
 
 }
-###################função pra testar final de jogo ########################
+###################funÃ§Ã£o pra testar final de jogo ########################
 
 fim_de_jogo(){
 	jogando=$1
@@ -248,7 +248,7 @@ fim_de_jogo(){
 	echo "CONTINUA"
 }
 
-################### que começa jogando ########################
+################### que comeÃ§a jogando ########################
 quemjoga="branco"
 
 
@@ -261,8 +261,8 @@ desenha_tabuleiro
 
 if [ $quemjoga == "branco" ]
 then
-	################# o height é incrementado para poder a linha descer no canto certo############# 
-	tput cup $(($height / 2)) $((($width / 2) - (29 / 2))) ## a ultima subtração é para centralizar o testo
+	################# o height Ã© incrementado para poder a linha descer no canto certo############# 
+	tput cup $(($height / 2)) $((($width / 2) - (29 / 2))) ## a ultima subtraÃ§Ã£o Ã© para centralizar o testo
         height=$(($height + 2))
 	if [ "$FIM" == "FIM" ];
 	then
@@ -271,7 +271,7 @@ then
 		echo "PRETAS VENCERAM"
 		read enter
 	fi
-	echo "Brancos jogam, informe o nome da peça deseja mover: "; 
+	echo "Brancos jogam, informe o nome da peÃ§a deseja mover: "; 
 	tput cup $(($height / 2)) $((($width / 2)))
         height=$(($height + 2))
 	read nome
@@ -286,13 +286,13 @@ then
 	fi
 	tput cup $(($height / 2)) $((($width / 2) - (20 / 2)))
         height=$(($height + 2))
-	echo "Informa a posição que ela esta. EX: A1: "; 
+	echo "Informa a posiÃ§Ã£o que ela esta. EX: A1: "; 
 	tput cup $(($height / 2)) $((($width / 2)))
         height=$(($height + 2))
 	read pos1
 	tput cup $(($height / 2)) $((($width / 2) - (22 / 2)))
         height=$(($height + 2))
-	echo "Informe a posição para onde ela ira. EX: B2:"; 
+	echo "Informe a posiÃ§Ã£o para onde ela ira. EX: B2:"; 
 	tput cup $(($height / 2)) $((($width / 2)))
 	height=$(($height + 2))
 	read pos2
@@ -307,7 +307,7 @@ then
 	if [ "${ps[$x,$y]}" != "$testa" ];
 	then
 		tput cup $(($height / 2)) $((($width / 2) - (22 / 2)))
-		echo "Você é CEGO? A peça não esta no local indicado"
+		echo "VocÃª Ã© CEGO? A peÃ§a nÃ£o esta no local indicado"
 		read enter
 		width=$(($colunas - 30))
         	height=$(($linhas - 20))
@@ -318,7 +318,7 @@ then
 		if [ "$limite" == "False" ]
 		then
 			tput cup $(($height / 2)) $((($width / 2) - (22 / 2)))
-			echo "Você é CEGO? O Destino da peça não é válido"
+			echo "VocÃª Ã© CEGO? O Destino da peÃ§a nÃ£o Ã© vÃ¡lido"
 			width=$(($colunas - 30))
                		height=$(($linhas - 20))
 			read enter
@@ -334,7 +334,7 @@ then
         		height=$(($linhas - 20))
 		fi
 	fi
-	################### após a ação devemos devolver o valor das variaveis width e height para poderem redesenhar o tabuleiro###########
+	################### apÃ³s a aÃ§Ã£o devemos devolver o valor das variaveis width e height para poderem redesenhar o tabuleiro###########
 else
 	tput cup $(($height / 2)) $((($width / 2) - (29 / 2)))
         height=$(($height+2))
@@ -345,7 +345,7 @@ else
 		echo "BRANCAS VENCERAM"
                 read enter
         fi
-	echo "Pretos jogam, informe o nome da peça deseja mover: "
+	echo "Pretos jogam, informe o nome da peÃ§a deseja mover: "
 	tput cup $(($height / 2)) $((($width / 2)))
         height=$(($height + 2))
 	read nome
@@ -362,13 +362,13 @@ else
 
 	tput cup $(($height / 2)) $((($width / 2) - (20 / 2)))
         height=$(($height + 2))
-        echo "Informa a posição que ela esta. EX: A1: "
+        echo "Informa a posiÃ§Ã£o que ela esta. EX: A1: "
 	tput cup $(($height / 2)) $((($width / 2)))
         height=$(($height + 2))
 	read pos1
 	tput cup $(($height / 2)) $((($width / 2) - (22 / 2)))
         height=$(($height + 2))
-        echo "Informe a posição para onde ela ira. EX: B2: " 
+        echo "Informe a posiÃ§Ã£o para onde ela ira. EX: B2: " 
 	tput cup $(($height / 2)) $((($width / 2)))
         height=$(($height + 2))
 	read pos2
@@ -382,7 +382,7 @@ else
 	if [ "${ps[$x,$y]}" != "$testa" ];
         then
 		tput cup $(($height / 2)) $((($width / 2) - (22 / 2)))
-                echo "Você é CEGO? A peça não esta no local indicado"
+                echo "VocÃª Ã© CEGO? A peÃ§a nÃ£o esta no local indicado"
          	
         	read enter
 		
@@ -395,13 +395,14 @@ else
                 if [ "$limite" == "False" ]
                 then
                         tput cup $(($height / 2)) $((($width / 2) - (22 / 2)))
-                        echo "Você é CEGO? O Destino da peça não é válido"
+                        echo "VocÃª Ã© CEGO? O Destino da peÃ§a nÃ£o Ã© vÃ¡lido"
                         width=$(($colunas - 30))
                         height=$(($linhas - 20))
                         read enter
                         continue
                 else
-                        faz_backup
+                        FIM=`fim_de_jogo $quemjoga $xn $yn`
+			faz_backup
                         ps[$x,$y]=" "
                         ps[$xn,$yn]="$testa"
                         quemjoga="branco"
@@ -410,7 +411,7 @@ else
                 fi
 
 
-################### após a ação devemos devolver o valor das variaveis width e height para poderem redesenhar o tabuleiro###########
+################### apÃ³s a aÃ§Ã£o devemos devolver o valor das variaveis width e height para poderem redesenhar o tabuleiro###########
 	fi
 fi 
 
