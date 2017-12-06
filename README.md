@@ -30,7 +30,7 @@ a ultima jogada e devolve a vez para o jogador anterior, o jogo acaba quando um 
 
 Referência API/API Reference
 https://github.com/thelazt/chessbash
-bolknote.ru
+https://bolknote.ru
 
 Contribuintes/Contributors
 
